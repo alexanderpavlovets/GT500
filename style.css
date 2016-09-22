@@ -1,10 +1,15 @@
 body{
     font-family: sans-serif;
     font-size: 14px;
-    width: 1000px;
-    margin: 0 auto;
+    margin: 0;
+    background-color: skyblue;
 }
-/* Maybe i should add wrapper here */
+
+#wrapper{
+    width: 1000px;
+    margin: 50px auto;
+    background-color: #f5ebdd;
+}
 
 /* Header */
 
@@ -13,17 +18,31 @@ body{
     position: relative;
 }
 
+#project_name{
+    font-family: sans-serif;
+    font-size: 50px;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#project_name span{
+    font-size: 65px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
 #cobra_logo{
     height: inherit;
-    margin-left: -5%;
     float: left;
+    margin-left: 2%;
 }
 
 #mustang_logo{
-    height: 50%;
+    height: 45%;
     float: right;
     margin-right: 1%;
-    margin-top: 1%
+    margin-top: 3%
 }
 
 #header_menu{
@@ -31,11 +50,12 @@ body{
     position: absolute;
     right: 0px;
     bottom: 14px;
-    width: 74%;
-    height: 100px;
+    width: 76%;
+    height: 85px;
     border: 3px solid black;
     border-right-color: transparent;
     border-radius: 35px 0px 0px 35px;
 }
 
 /* End of Header */ 
+
