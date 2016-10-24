@@ -59,34 +59,33 @@ body{
 /* block header with lines and name*/
 .block_header{
     height: 30px;
+    padding-top: 10px;
 }
 
 .block_header_name{
-    margin: 0 auto;
-    width: 20%;
-    height: 30px;
+    width: 14%;
     text-align: center;
-    font-size: 26px;
-    letter-spacing: 0.2em;
-    padding-top: 2px;
+    font-size: 20px;
+    margin-top: -8px;
+    float: right;
 }
 
 .h_line_left{
-    width: 40%;
-    height: 2px;
+    width: 43%;
+    height: 1px;
     background: black;
     float: left;
     clear: left;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .h_line_right{
-    width: 40%;
-    height: 2px;
+    width: 43%;
+    height: 1px;
     background: black;
     float: right;
     clear: right;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 /* block header with lines and names ends*/
 
@@ -97,15 +96,23 @@ body{
 }
 
 #learned_block{
-    height: 600px;
+    height: 620px;
+    padding-top: 30px;
 }
 
+#learning_block{
+    height: 340px;
+}
 
 .content_element{
-    height: 100px;
-    width: 25%;
+    height: 200px;
+    width: 250px;
     float: left;
-    margin: 10px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    border: solid 1px black;
 }
 
 
