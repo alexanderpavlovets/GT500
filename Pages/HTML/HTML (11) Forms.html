@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 11 Forms</title>
+</head>
+<body bgcolor="khaki">
+<h2>Урок 11 Формы</h2>
+<p>Формы дают пользователям возможность вводить информацию.</p>
+<p>Формы HTML не могут обрабытывать информацию, для этого уже языки програмирования нужны.</p>
+<p>Все формы это тег - form, между ним вся остальная доп. инфа</p>
+<p>Есть несколько параметров (атрибутов) form:</p>
+<ul>
+    <li>name - имя формы. Необходимо, если на странице несколько форм
+    </li>
+    <li>action - определяет URL-адрес, по которому будет отправлена информация введеная пользователем
+    </li>
+    <li>method - определяет способ отправки информации
+    </li>
+    <li>target - указывает имя окна, в котором будут отображаться результаты обработки отправленной формы
+    </li>
+</ul>
+
+<h3>Текстовое поле:</h3>
+
+<p>Тег input - просто текстовое поле:</p>
+
+<form name="form1" action="">
+    <input type="text" name="text1" size="20" maxlength="50" value="Введите текст">
+</form>
+
+<ul> Параметры, которые есть в первом текстовом поле:
+    <li>name - имя элемента
+    </li>
+    <li>type - тип элемента (в данном случае - text)
+    </li>
+    <li>size - размер текстового поля в символах, которые одновременно будут видны, при вводе большего количества символов, они будут прокручиваться,
+    </li>
+    <li>maxlength - максимальное количество символов, которое можно ввести в поле, если опустить этот параметр, то число символов будет неограниченным,
+    </li>
+    <li>value - текст, который будет отображаться (его можно стереть), при отсутствии этого параметра поле будет пустым.
+   </li>
+</ul>
+
+<ul>Возможны ещё 2 параметра (атрибута)
+    <li>disabled - блокирует поле от любых изменений,
+    </li>
+    <li>readonly - делает поле доступным только для чтения.
+    </li>
+</ul>
+
+<p>Примеры этих параметров:</p>
+
+<form action="" name="form2" align="center">
+    <input type="text" name="text2" size="20" maxlength="50" value="Неактивное поле" disabled>
+
+    <input type="text" name="text3" size="20" maxlength="50" value="Только для чтения" readonly>
+</form>
+
+<h3>Текстовое поле для ввода пароля:</h3>
+
+<p>type="password" и обычное текстовое поле</p>
+
+Введите пароль: <br>
+<form action="" name="form3">
+    <input type="password" name="password1" size="20" maxlength="10">
+</form>
+
+<h3>Флажки:</h3>
+<p>type="checkbox". Один input делает один флажок:</p>
+
+Какими языками Вы владеете?
+<form action="" name="form4">
+    <input type="checkbox" name="lan1" value="english" checked> Английский
+    <input type="checkbox" name="lan2" value="german"> Немецкий
+    <input type="checkbox" name="lan3" value="spanish"> Испанский
+    <input type="checkbox" name="lan4" value="french"> Французский
+</form>
+
+<ul>Атрибуты этого input:
+    <li>type - тип элемента (в данном случае - checkbox)
+    </li>
+    <li>name - имя элемента, указывает программе обработчику формы, какой пункт выбрал пользователь
+    </li>
+    <li>value - значение элемента, указывает программе обработчику формы значение пункта, который выбрал пользователь. В нашем примере выбран пункт английский, следовательно, программа-обработчик получит: lan1="english"
+    </li>
+    <li>checked - им обычно помечают наиболее вероятные для выбора пункты, пользователь щелчком мыши может выбрать другие пункты - <b>почему-то не работает. Не тупи! Работает - страницу обнови.</b>
+    </li>
+</ul>
+
+<h3>Переключатели</h3>
+<p>type="radio" Можно выбрать только один пункт - атрибуты name для этого должны быть одинаковыми! <br> Остальное всё так же, как и у флажков</p>
+
+Укажите свой пол:
+<form action="" name="form5">
+    <input type="radio" name="sex" value="man" checked> Мужской
+    <input type="radio" name="sex" value="woman"> Женский
+</form>
+
+<h3>Кнопки</h3>
+
+<ol>Существует четыре вида кнопок:
+   <li>submit - кнопка отправки содержимого формы web-серверу. Ее параметры:
+       <ul>
+           <li>type="submit" - тип кнопки</li>
+           <li>name - имя кнопки</li>
+           <li>value - надпись на кнопке</li>
+       </ul>
+   </li>
+   <li>image - графическая кнопка отправки содержимого формы web-серверу. Для ее использования необходимо подготовить картинку кнопки, а потом использовать ее в виде кнопки. Ее параметры: 
+       <ul>
+           <li>type="image" - тип графической кнопки</li>
+           <li>name - имя кнопки</li>
+           <li>src - адрес картинки для кнопки</li>
+       </ul>
+   </li>
+   <li>reset - кнопка, позволяющая восстановить все значения по умолчанию в форме. Ее параметры:
+       <ul>
+           <li>type="reset" - тип кнопки очищения</li>
+           <li>name - имя кнопки</li>
+           <li>value - надпись на кнопке</li>
+       </ul>
+   </li>
+   <li>button - произвольная кнопка, ее действия назначаются вами, т.е. сама она делать ничего не умеет. Ее параметры:
+       <ul>
+           <li>type="button" - тип произвольной кнопки</li>
+           <li>name - имя кнопки</li>
+           <li>value - надпись на кнопке</li>
+           <li>onclick - указывает, что делать при щелчке по кнопке. Вообще, у этого типа кнопок есть и другие события (например, двойной щелчок), но здесь мы не будем их рассматривать</li>
+       </ul>
+   </li>
+</ol>
+<p>Если в форме несколько кнопок - они должны иметь разные названия:</p>
+
+<form action="" name="form6">
+    <input type="submit" name="submit1" value="Отправить">
+    <input type="image" name="button_img1" src="Images/button_send.jpg" height="20" width="80">
+    <input type="reset" name="reset1" value="Очистить">
+    <input type="button" name="button1" value="Отправить">
+</form>
+    <p>Кнопки можно задавать и по другому - тег <b>button</b> (всё равно в теге form), возможности этого тега шире, можно вставлять картинки и текст в кнопку. Параметры этого тега: </p>
+
+<ul>
+    <li>type - тип кнопки, может принимать значения:
+        <ul type="circle">
+            <li>reset - кнопка очистки формы</li>
+            <li>submit - кнопка отправки данных</li>
+            <li>button - кнопка произвольного действия</li>
+        </ul>
+    </li>
+    <li>name - имя кнопки</li>
+    <li>value - надпись на кнопке</li>
+</ul>
+
+<form action="" name="form7">
+    <button name="submit2" type="submit">
+        <img src="Images/button_letter.jpg" alt="" height="40" align="absmiddle"><font face="Verdana" size="4">Отправить</font>
+    </button>
+</form>
+
+<h3>Поле для файлов</h3>
+
+<p>type="file Поле для ввода имени файла + кнопка Browse, при щелчке открывается дерево папок компа, при выборе - файл присоединяется к содержимому формы при отправке на сервер</p>
+
+<form action="" name="form8">
+    <input type="file" name="load" size="50">
+</form>
+
+<h3>Многострочное текстовое поле</h3>
+
+<p>Тег textarea в form - Используется для обьемных текстов. Параметры: </p>
+
+<ul>
+    <li>name - имя поля </li>
+    <li>cols - ширина поля в пикселах</li>
+    <li>rows - количество строк текста видимых на экране</li>
+    <li>wrap
+        <ul>
+            <li>off - переноса не происходит</li>
+            <li>virtual - перенос отображается, но на сервер поступает неделимая строка</li>
+            <li>physical - перенос на экране и при поступлении на сервер</li>
+        </ul>
+    </li>
+    <li>disabled - неактивное поле</li>
+    <li>readonly - поле только для чтения</li>
+</ul>
+
+<form action="" name="form9">
+    <textarea name="text_area1" id="t_a_1" cols="30" rows="2" wrap="virtual"></textarea>
+    <br>
+    <textarea name="text_area2" id="t_a_2" cols="50" rows="4" wrap="physical"></textarea>
+    <br>
+    <textarea name="text_area3" id="t_a_3" cols="80" rows="6" wrap="off"></textarea>
+    <br>
+    <p>Кнопку "очистить" сам делал - вышло даже.</p>
+    <input type="reset" name="reset2" value="Очистить текст">
+</form>
+
+<h3>Раскрывающиеся списки</h3>
+<p>Тег - select  начинает раскрывающийся список, как с выбором одного елемента так и многих. Тег option задаёт елемнты выбираемых значений в теге select.  На примере понятней, но сначала параметры: </p>
+
+<ul>
+    <li>select
+       <ul>
+           <li>name - имя списка. Каждый выбранный элемент списка при передаче на сервер будет иметь вид: name.value, где значение (value) берется из тега option.
+           </li>
+           <li>size - определяет количество видимых элементов в списке: 1 - простой раскрывающийся список, больше 1 - список с полосой прокрутки.
+           </li>
+           <li>multiple - разрешает выбор нескольких элементов списка.
+           </li>
+       </ul>
+    </li>
+    <li>option
+       <ul>
+           <li>selected - им помечают наиболее вероятный для выбора элемент списка, если список со множественным выбором, то можно пометить несколько пунктов.
+           </li>
+           <li>value - значение, которое будет отправлено серверу, если пункт выбран
+           </li>
+       </ul>
+    </li>
+</ul>
+
+<form action="" name="form10">
+   Что хочешь выучить?
+   <br>
+    <select name="lern" id="sel_1" size="1">
+        <option selected value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+    </select>
+    <br>Сколько времени готовы потратить? 
+    <br>
+    <select name="time" id="sel_2" size="3">
+        <option selected value="1">1 Месяц</option>
+        <option value="2">2 Месяца</option>
+        <option value="3">3 Месяца</option>
+    </select>
+    <br>
+    Какие дни недели устроят для занятий? 
+    <br>
+    (выбирайте с зажатой клавишей ctrl)
+    <br>
+    <select name="days" id="sel_3" size="7" multiple>
+        <option value="mon">Понедельник</option>
+        <option value="tue">Вторник</option>
+        <option value="wen">Среда</option>
+        <option value="thu">Четверг</option>
+        <option value="rfi">Пятница</option>
+        <option value="sat">Суббота</option>
+        <option value="sun">Воскресенье</option>
+    </select>
+    
+</form>
+
+<p>Ещё существует тег - optgroup , он позволяет разбить элементы списка по признакам. <br> У этого тега все один параметр - lable , который и задаёт название группе элементов:</p>
+
+<form action="" name="form11">
+    Каталог машин: 
+    <br>
+    <select name="catalog" id="sel_4" size="10">
+        <optgroup label="Ford">
+            <option value="mustang">Мустанг</option>
+            <option value="fiesta">Фиеста</option>
+            <option value="kuga">Куга</option>
+        </optgroup>
+        <optgroup label="BMW">
+            <option value="m3">М 3</option>
+            <option value="m6">M 6</option>
+            <option value="i8">I 8</option>
+        </optgroup>
+        <optgroup label="Mercedes">
+            <option value="e500"> E 500</option>
+            <option value="s500">S 500</option>
+            <option value="slk">SLK</option>
+        </optgroup>
+    </select>
+</form>
+
+<h3>Надписи</h3>
+<p>Все элементы формы можно связать с их надписями при помощи элемента label:</p>
+
+<form action="" name="form12">
+    <label for="load2">Выбирите файл для загрузки: </label>
+    <input type="file" name="load2" size="50">
+</form>
+<p>Тут есть противоречия, кто-то использует label, а кто-то считает что это только удленняет код, а результат эдентичен обычному тексту возле формы </p>
+
+<h3>Обобщающий пример</h3>
+
+<form action="" name="formEND">
+    <table border="0" cellspacing="5" cellpadding="5" width="90%">
+    <caption>Форма регистрации</caption>
+        <tr>
+            <td width="35%" align="right" valign="top">Имя</td>
+            <td><input type="text" name="name" size="30"></td>
+        </tr>
+        
+        <tr>
+            <td align=right valign="top">e-mail</td>
+            <td><input type="text" name="email" size="30"></td>
+        </tr>
+        
+        <tr>
+            <td align=right valign="top">Пароль</td>
+            <td><input type="password" name="password" size="30"></td>
+        </tr>
+        
+        <tr>
+            <td align=right valign="top">Повтор пароля</td>
+            <td><input type="password" name="password2" size="30"></td>
+        </tr>    
+        
+         <tr>
+            <td align=right valign="top">Пол</td>
+            <td><input type="radio" name="sex" value="man"> Мужской <input type="radio" name="sex" value="woman">Женский</td>
+        </tr>
+        
+        <tr>
+            <td align=right valign="top">Увлечения</td>
+            <td>
+               <select name="hobby" id="sel_1" size="7" multiple>
+               <option selected value="comp">Компьютеры</option>
+               <option value="sport">Спорт</option>
+               <option value="games">Игры</option>
+               <option value="animals">Животные</option>
+               <option value="cars">Машины</option>
+               <option value="clubs">Клубы</option>
+               <option value="music">Музыка</option> 
+               </select></td>
+        </tr> 
+        
+        <tr>
+            <td align=right valign="top">Ваши пожелания</td>
+            <td><textarea name="wishes" id="t_a_1" cols="30" rows="5" wrap="physical"></textarea></td>
+        </tr>
+         
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="submit" value="Отправить">
+                <input type="reset" name="reset" value="Очистить форму">
+            </td>
+        </tr>               
+    </table>
+</form>
+
+<p>Пример создания формы отпросника с использованием табличной верстки, т.е. форма - в ней таблица, в ячейках информация. Всё просто.</p>
+
+</body>
+</html>

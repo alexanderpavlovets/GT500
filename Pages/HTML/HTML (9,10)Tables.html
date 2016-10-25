@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 9,10 Tables</title>
+</head>
+<body>
+    <h2 align="center">Урок 9 Таблицы </h2>
+
+<h3>Создание таблиц</h3>
+
+<p>Сама табилца - table <br>Название таблицы - caption <br> Строки - tr <br> Столбцы - td <br> Названия столбцов расположенные в первой строке - th</p>
+
+<table>
+    <caption>Таблица себе как таблица</caption>
+    <tr><th>Первый столбец</th><th>Второй</th><th>Третий</th></tr>
+    <tr><td>11</td><td>12</td><td>13</td></tr>
+    <tr><td>21</td><td>22</td><td>23</td></tr>
+    <tr><td>31</td><td>32</td><td>33</td></tr>
+</table>
+<h3>Параметры таблиц: отступ, ширина, цвет фона, рамка</h3>
+<p>У тега table есть много атрибутов: </p>
+
+<ul>
+<li>width - задаёт ширину таблицы ( в пикселях/%</li>
+<li>bgcolor - задаёт цвет фона ячеек таблицы</li>
+<li>background - заливает фон таблицы рисунком</li>
+<li>border - задаёт рамку указанной ширины вокруг всей табилцы</li>
+<li>cellpadding - задаёт отступ в пикселах мжду границей клетки и её содержимым</li>
+<li>align - выравнивает таблицу на странице</li>
+</ul> 
+
+<table align ="center" width="400" bgcolor="plum" border="1">
+    <caption>Это название</caption>
+        <tr><th>Столбец1</th><th>Столбец2</th></tr>
+        <tr><td>11</td><td>12</td></tr>
+        <tr><td>21</td><td>22</td></tr>
+        <tr><td>31</td><td>32</td></tr>
+</table>
+<p>Есть и ещё параметры:</p>
+<ul type="square">
+    <li>cellspacing - задет расстояние между ячейками в пикселах</li>
+    <li>cellpadding - задаёт расстояние между текстом и внутренней границей ячейки таблицы в пикселах</li>
+</ul>
+
+<table align ="center" width="400" bgcolor="khaki" border="1" cellspacing="0" cellpadding="10">
+    <caption>Это название</caption>
+        <tr><th>Столбец1</th><th>Столбец2</th></tr>
+        <tr><td>11</td><td>12</td></tr>
+        <tr><td>21</td><td>22</td></tr>
+        <tr><td>31</td><td>32</td></tr>
+</table>
+<p>В этой таблице cellspacing установлен на 0 - поэтому границы в привычном варианте, если поставить больше чем 0 - будут ганицы двойные (как в пред. таблицах).</p>
+<p>Для границ есть собственные параметры:</p>
+<ol>
+    <li><b>frame</b> - задаёт вид рамки вокруг таблицы и принимает значения:
+        <ul>
+            <li> void - нет рамки</li>
+            <li> above - только верхняя рамка</li>
+            <li>below - только нижняя рамка</li>
+            <li>hsides - верхняя и нижняя рамки</li>
+            <li>vsides - правая и левая рамки</li>
+            <li>lhs - левая рамка</li>
+            <li>rhs - правая рамка</li>
+            <li>box - все четыре части рамки</li>
+        </ul>
+    </li>
+    <li> <b>rules</b> - задаёт вид внутренних границ таблицы и может принимать значения:
+        <ul>
+            <li>none - нет границ между ячейками</li>
+            <li>groups - только между группами строк и группами столбцов</li>
+            <li>rows - между строками</li>
+            <li>cols - между столбцами</li>
+            <li>all - все границы между ячейками</li>
+        </ul>
+    </li>
+</ol>
+
+<table align="center" bgcolor="orange" border="1" cellspacing="0" width="350" frame="vsides" rules="rows">
+    <caption>Название таблицы</caption>
+    <tr><th>Name</th><th>Name1</th></tr>
+    <tr><td>11</td><td>12</td></tr>
+    <tr><td>21</td><td>22</td></tr>
+</table>
+
+<h3>Работа с ячейками - атрибуты для tr и td:</h3>
+
+    <p>Таблицы формируются построчно - атрибуты заданные tr распростроняются на всю строку, бывают:</p>
+    <ul>
+        <li>align - right/left/center</li>
+        <li>valign - top/bottom/middle</li>
+        <li>bgcolor - цвет указывает</li>
+    </ul> 
+<p>Не тупи - тут все ясно</p>
+<table width="350" align="center" border="1" cellspacsing="0" bgcolor="orange" frame="box" rules="all">
+    <caption>Таблица с форматированием строк</caption>
+    <tr><th>Name</th><th>Name_1</th></tr>
+    <tr align="center" valign="middle" bgcolor="red">
+        <td>11</td><td>12</td>
+    </tr>
+    <tr align="left" valign="top" bgcolor="blue">
+        <td>21</td><td>22</td>
+    </tr>
+    <tr align="right" valign="bottom" bgcolor="green">
+        <td>31</td><td>32</td>
+    </tr>
+</table>
+
+<p>Эти же параметры можно применять и к ячекам, т.е. любому тегу td можно задать тоже самое и ещё 2:</p>
+<ul>
+    <li>width - ширина в пикселах или %, меняется ширина всего столбца (за 100% берётся ширина таблицы)</li>
+    <li>heigth - высота, задав для ячейки - высота задаётся для всей строки</li>  
+</ul>
+
+<table width="350" align="center" border="1" cellspacsing="0" bgcolor="orange" frame="box" rules="all">
+    <caption>Таблица с форматированием ячеек</caption>
+    <tr><th>Name</th><th>Name_1</th></tr>
+    <tr align="center" valign="middle" bgcolor="red">
+        <td height="30">11</td><td>12</td>
+    </tr>
+    <tr align="left" valign="top" bgcolor="blue">
+        <td width="80%" bgcolor="khaki">21</td><td>22</td>
+    </tr>
+    <tr align="right" valign="bottom" bgcolor="green">
+        <td>31</td><td>32</td>
+    </tr>
+</table>
+<p>Если не задавать ширину и высоту - таблица будет форммироватся по содержимому!</p>
+<hr>
+<h2 align="center"> Урок 10 Таблицы сложных структур</h2>
+
+<h3>colspan - тег объединения столбцов</h3>
+
+<p>colspan следует использовать при указании уже стол,ца , т.е. тега td!</p>
+
+<table width="500" align="center" border="1" cellspacing="0" cellpadding="10">
+    <caption>Таблица с объед. столбцами</caption>
+    <tr bgcolor="darkred">
+        <td colspan="2" height="50" align="center">Шапка сайта</td>    
+    </tr>
+    <tr bgcolor="oldlace" >
+        <td width="200" height="400">Меню</td>
+        <td>Контент</td>
+    </tr>
+    <tr bgcolor="darkred" height="50">
+        <td colspan="2">Низ сайта</td>
+    </tr>
+</table>
+
+<p>Ещё одна табличка - потренить:</p>
+
+<table width="700" border="1" align="center" cellspacing="0" cellpadding="10">
+    <caption>Пробую сам</caption>
+    <tr bgcolor="darkred" height="40" align="center">
+        <td colspan="6"> Шапка сайта</td>
+    </tr>
+    <tr bgcolor="oldlace" height="40">
+        <td>Меню</td>
+        <td>Меню</td>
+        <td>Меню</td>
+        <td>Меню</td>
+        <td>Меню</td>
+        <td>Меню</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="darkred" height="200">Новости</td>
+        <td colspan="4" bgcolor="oldlace">Контент</td>
+    </tr>
+</table>
+
+<h3>rowspan - тег объединения строк</h3>
+<p>Всё аналогино - в тег td вписываешь сколько строк необходимо объеденить:</p>
+
+<table width="500" border="1" align="right" cellspacing="0" cellpadding="10">
+   <caption>Таблица с объединенной строкой</caption>
+   <tr bgcolor="darkred" height="40">
+       <td rowspan="2" width="30%">Меню</td>
+       <td align="center">Шапка</td>
+   </tr>
+    <tr>
+        <td height="100" bgcolor="oldlace"> Контент</td>
+    </tr>
+</table> <br clear="all">
+
+<p>Ещё одна - надо потренить</p>
+
+<table width="80%" border="1" alin="center" cellspacing="0" cellpadding="10">
+   <caption>Тут попробую объеденить col и rowspan</caption>
+   <tr height="40" bgcolor="darkred">
+       <td> Шапка </td>
+       <td rowspan="2" width="30%">Меню </td>
+   </tr>
+    <tr height="300">
+        <td bgcolor="oldlace"> Контент</td>
+    </tr>
+    <tr height="40" bgcolor="darkred">
+        <td colspan="2"> Низ сайта</td>
+    </tr>
+</table>
+
+<h3>Вложенные таблицы</h3>
+
+<p>В мою последнюю таблицу буду встраивать ещё одну:</p>
+
+<table width="400" cellspacing="0" cellpading="10" border="0" frame="void" rules="none">
+    <caption></caption>
+    <tr>
+        <td width="40%"><img src="Images/Mustang.jpg" alt="Mustang" width="150" hspace="5"></td>
+        <td>Ну самы просто крутой!</td>
+    </tr>
+    <tr>
+        <td width="40%"><img src="Images/Merc.jpg" alt="Merc" width="150" hspace="5"></td>
+        <td>Хорошая машина</td>
+    </tr>
+    <tr>
+        <td width="40%"><img src="Images/Ferrari.png" alt="Ferrari" width="150" hspace="5"></td>
+        <td>Сука быстрая!</td>
+    </tr>
+</table>
+
+
+<table width="700" border="1" alin="center" cellspacing="0" cellpadding="10">
+   <caption>Вложенные таблицы - просто копи-паст маленькой табл в столбец большой</caption>
+   <tr height="40" bgcolor="darkred">
+       <td> Шапка </td>
+       <td rowspan="2" width="30%">Меню </td>
+   </tr>
+    <tr height="300">
+        <td bgcolor="oldlace"> 
+          <table width="400" cellspacing="0" cellpading="10" border="0" frame="void" rules="none">
+          <caption></caption>
+            <tr>
+              <td width="40%"><img src="Images/Mustang.jpg" alt="Mustang" width="150" hspace="5"></td>
+              <td>Ну самы просто крутой!</td>
+           </tr>
+           <tr>
+              <td width="40%"><img src="Images/Merc.jpg" alt="Merc" width="150" hspace="5"></td>
+              <td>Хорошая машина</td>
+           </tr>
+           <tr>
+              <td width="40%"><img src="Images/Ferrari.png" alt="Ferrari" width="150" hspace="5"></td>
+              <td>Сука быстрая!</td>
+           </tr>
+         </table>
+   </td>
+    </tr>
+    <tr height="40" bgcolor="darkred">
+        <td colspan="2"> Низ сайта</td>
+    </tr>
+</table>
+
+<p>Именно так выглядит сайт на табличной верстке! </p>
+
+</body>
+</html>

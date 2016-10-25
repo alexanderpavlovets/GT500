@@ -11,6 +11,23 @@ body{
     background-color: #e5e5e4;
 }
 
+
+a:link{
+    color: black;
+}
+
+a:visited{
+    color: black
+}
+
+a:hover{
+    color: #108888;
+}
+
+a:active{
+    color: #108888;
+}
+
 /* Header */
 
 #header{
@@ -136,5 +153,33 @@ body{
     border: solid 1px black;
 }
 
+.content_element_name{
+    height: 20%;
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
 
+.content_element_slogan{
+    height: 10%;
+    font-weight: bold;
+    text-align: center;
+    
+}
 
+.content_element_data{
+    text-align: center;
+    margin-top: 10px
+}
+
+/* --------------------- Inner pages style---------------------------- */
+.inner_page_content_block{
+    height: 890px;
+    padding-top: 30px;
+}
+
+.inner_page_menu_element{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
