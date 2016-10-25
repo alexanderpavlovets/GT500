@@ -1,0 +1,59 @@
+body {
+    background-color: antiquewhite;
+    font-family:serif
+}
+
+p#sn, p#so, p#si {
+    font-family: Verdana, sans-serif
+}
+
+p#sn {
+    font-style: normal;
+}
+p#so {
+    font-style: oblique;
+    font-variant: small-caps;
+}
+p#si {
+    font-style: italic;
+}
+
+p#weight {
+    font-weight: bold;
+}
+
+p#size, p#size_em {
+    font-size: 15pt;
+}
+p#size_em {
+    font-size: 0.8em;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-indent: 10%;
+}
+
+p#tt_cap {
+    text-transform: capitalize;
+}
+p#tt_up {
+    text-transform: uppercase;
+}
+p#tt_lc {
+    text-transform: lowercase;
+}
+
+p#interval {
+    word-spacing: 15px;
+    letter-spacing: 5px;
+    line-height: 1.3em;
+}

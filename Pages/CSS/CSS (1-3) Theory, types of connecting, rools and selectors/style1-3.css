@@ -1,0 +1,32 @@
+body {
+    background: #0bada7;
+    color: floralwhite;
+}
+h1 {
+    color: crimson
+}
+h3 {
+    color: rgb(212, 204, 0)
+}
+h2 {
+    color: crimson
+}
+p#black {
+    color: black
+}
+
+p.orange {
+    color: orange
+}
+
+.black {
+    color: black
+}
+
+i {
+    color: rebeccapurple
+}
+
+p i {
+    color: chartreuse
+}

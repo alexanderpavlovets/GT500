@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Cursor</title>
+    <link rel="stylesheet" href="style_cursor.css" type="text/css">
+</head>
+<body>
+
+<h1>Как задать вид курсора</h1>
+В CSS всё очень просто, надо в HTML определить у каких элементов будет другой вид курсора (присвоить класс), и в CSS к этому классу написать всего 1 свойство:
+<br>
+<b>cursor:вид;</b>
+<br>
+<br>
+Сейчас у курсора видов намного больше чем, 14 - все видны в brackets, надо юзать что б понять, но укажу основные. 
+<br>
+Стандартных видов у курсора 14:
+<ul>
+    <li>crosshair - перекрестье</li>
+    <li>help - знак вопроса или воздушный шар (в зависимости от браузера)</li>
+    <li>e-resize, w-resize - двунаправленная горизонтальная стрелка</li>
+    <li>n-resize, s-resize - двунаправленная вертикальная стрелка</li>
+    <li>ne-resize, sw-resize - двунаправленная диагональная стрелка (с нижнего левого угла в верхний правый)</li>
+    <li>se-resize, nw-resize - двунаправленная диагональная стрелка (с нижнего правого угла в верхний левый)</li>
+    <li>move - перекрестье со стрелками на конце</li>
+    <li>pointer - ладошка</li>
+    <li>text - вертикальная линия</li>
+    <li>wait - песочные часы или циферблат (в зависимости от браузера)</li>
+    <li>auto - вид по умолчанию</li>
+    <li>default - вид по умолчанию на данной платформе (в основном стрелка)</li>
+</ul>
+
+Для наглядности создам 16 ссылок - и каждой присвою свой вид курсора (будут одинаковые - двусторонние стрелки можно задавать по-разному):
+<br>
+<a href="" class="a_auto">auto</a>
+<br>
+<a href="" class="a_default">default</a>
+<br>
+<a href="" class="a_crosshair">crosshair</a>
+<br>
+<a href="" class="a_help">help</a>
+<br>
+<a href="" class="a_move">move</a>
+<br>
+<a href="" class="a_text">text</a>
+<br>
+<a href="" class="a_pointer">pointer</a>
+<br>
+<a href="" class="a_wait">wait</a>
+<br>
+<a href="" class="a_eresize">eresize</a>
+<br>
+<a href="" class="a_wresize">wresize</a>
+<br>
+<a href="" class="a_nresize">nresize</a>
+<br>
+<a href="" class="a_sresize">sresize</a>
+<br>
+<a href="" class="a_neresize">neresize</a>
+<br>
+<a href="" class="a_swresize">swresize</a>
+<br>
+<a href="" class="a_seresize">seresize</a>
+<br>
+<a href="" class="a_nwresize">nwresize</a>
+<br>
+
+Можно делать и свои курсоры - качать прогу для рисования курсоров, сохранять картинку курсора - потом в CSS указывать cursor:url("/path");. 
+<br>
+При этом, не все браузеры поддерживают пользовательские курсоры, поэтому при указании своего в CSS через запятую указывают ещё один вид - например auto: cursor:url("/path"), auto;
+</body>
+</html>

@@ -1,0 +1,41 @@
+#spisok1 {
+    list-style-type:disc;
+}
+#spisok2 {
+    list-style-type:circle;
+}
+#spisok3 {
+    list-style-type:square;
+}
+
+/* Нумерованные списки*/
+#spisok4 {
+    list-style-type: decimal;
+}
+#spisok5 {
+    list-style-type: lower-roman;
+}
+#spisok6 {
+    list-style-type: upper-roman;
+}
+#spisok7 {
+    list-style-type: lower-alpha;
+}
+/* маркер-картинка:*/
+
+#spisok8 {
+    list-style-image: url(list_marker.gif);
+}
+
+/*list-style-position*/
+
+#sp {
+    width: 166px;
+}
+
+#spisok9 {
+    list-style-position: inside;
+}
+#spisok10 {
+    list-style-position: outside;
+}

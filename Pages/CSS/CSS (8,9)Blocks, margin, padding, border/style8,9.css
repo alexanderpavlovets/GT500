@@ -1,0 +1,55 @@
+body {
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: beige;
+}
+
+p.lesson8 {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 50px;
+    width: 100px;
+    height: 50px;
+}
+
+#first {
+    border-bottom-color: red;
+    border-bottom-style: double;
+    border-left-color: blue;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-top-color: green;
+    border-top-style: dotted;
+    border-right-color: yellow;
+    border-right-style: solid;
+    border-right-width: 7px;
+}
+/* #first уже не работает - задан следующий*/
+#first, #second, #third, #fourth {
+    border: 1px solid red;
+    margin: 10px;
+    padding: 10px 5px;
+}
+
+#first {
+    background:yellow;
+    width: 300px;
+    height: 100px;
+    text-decoration: line-through;
+}
+#second {
+    background: yellow;
+    width: 300px;
+    font-family: cursive;
+}
+#third, #fourth {
+    background: pink;
+    width: 270px;
+    height: 100px;
+}
+
+#first:first-letter {
+    color:blue;
+    font-size: 2em;
+}

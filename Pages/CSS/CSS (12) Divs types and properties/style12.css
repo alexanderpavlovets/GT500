@@ -1,0 +1,38 @@
+#menu {
+    width: 200px;
+    background: yellow;
+}
+
+#menu a {
+    color: #2b3845;
+    text-decoration: none;
+    display:block;
+}
+
+h5, p#line {
+    display: inline;
+}
+
+h6 {
+    display: list-item;
+}
+
+#p2 {
+    display: none;
+}
+
+#p4 {
+    visibility: hidden;
+}
+
+div#scroll {
+    width: 300px;
+    height: 80px;
+    overflow: scroll
+}
+
+div#auto {
+    width: 300px;
+    height: 70px;
+    overflow: auto;
+}

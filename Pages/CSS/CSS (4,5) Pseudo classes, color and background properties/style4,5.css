@@ -1,0 +1,27 @@
+p:first-letter {
+    color: red;
+}
+
+p:first-line {
+    color: sienna;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+   color: aqua; 
+}
+
+body {
+    background-image:url(background1.jpg);
+    background-color: bisque;
+    color: white
+}
+
+p {
+    background-image: url(background_p.jpg);
+    background-repeat: no-repeat;
+}

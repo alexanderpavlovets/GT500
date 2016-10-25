@@ -1,0 +1,62 @@
+a.a_auto {
+    cursor: auto;
+}
+a.a_default {
+    cursor: default;
+}
+
+a.a_crosshair {
+    cursor: crosshair;
+}
+
+a.a_help {
+    cursor: help;
+}
+
+a.a_move {
+    cursor: move;
+}
+
+a.a_text {
+    cursor: text;
+}
+
+a.a_pointer {
+    cursor: pointer;
+}
+
+a.a_wait {
+    cursor: wait;
+}
+
+a.a_eresize {
+    cursor: e-resize;
+}
+
+a.a_wresize {
+    cursor: w-resize;
+}
+
+a.a_nresize {
+    cursor: n-resize;
+}
+
+a.a_sresize {
+    cursor: s-resize;
+}
+
+a.a_neresize {
+    cursor: ne-resize;
+}
+
+a.a_swresize {
+    cursor: sw-resize;
+}
+
+a.a_seresize {
+    cursor: se-resize;
+}
+
+a.a_nwresize {
+    cursor: nw-resize;
+}

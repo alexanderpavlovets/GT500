@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Lesson 12 Виды и свойства блоков</title>
+    <link rel="stylesheet" href="style12.css" type="text/css">
+</head>
+<body>
+
+<h1>Урок 12 - Виды и свойства блоков</h1>
+
+Элементы бывают блочные и строчные, но это можно изменить задав вид элементу, для этого используется свойство - <b>display</b>:
+<h3>display:block</h3>
+Делает элемент блочным, для примера делаю вертикальное меню:
+<br>
+Ссылки - строчный элемент и распологаются в строку, в зависимости от контента, я же им задам display:block - должны стать блочными элементами
+
+<div id="menu">
+    <a href="">Главная </a>
+    <a href="">О нас </a>
+    <a href="">Контакты </a>
+</div>
+Внимание! При задании ссылкам вида блока - они поменяли свой размер, под родительский блок, и стали шире!
+
+<h3>display:inline</h3>
+ДЕлает элемент строчным, прдположим надо написать абзац, который начинается с заголовка - добавлю в CSS h5, p {display:inline}: 
+<h5>Заголовок</h5><p id="line">Текст абзаца после заголовка</p>
+
+<h3>display:list-item</h3>
+Это значение делает любой элемент частью списка. Используется редко, мало каким браузером поддерживается. 
+<br>
+Для примера сделаю заголовки 6-го уровня элементами списка:
+<ul>
+    <h6>Заголовок</h6>
+    <h6>Заголовок</h6>
+    <h6>Заголовок</h6>
+</ul>
+
+<h3>display:none</h3>
+Это значение убирает элемент со страницы. Часто исползуется для раскрывающихся меню сайтов, с помощью языка програмировани (напромер JS). Это меню, при щелчке на которое раскрывается список подпунктов.
+<br>
+Существует охожее свойство в CSS - visibility:visible/hidden. 
+<br>
+Свойства похожи, но есть различия: 
+<ul>
+    <li>visibility:.. - делает элемент прозрачным</li>
+    <li>display:none - скрывает элемент как-будто его и не было</li>
+</ul> 
+Для примера сделаю 5 параграфов - 2-му задам display:none, 4-му visibility:hidden
+<br>
+
+<p>Параграф 1</p>
+<p id="p2">Параграф 2</p>
+<p>Параграф 3</p>
+<p id="p4">Параграф 4</p>
+<p>Параграф 5</p>
+
+Чаще всего это 2 свойства используются вместе с JS.
+
+<h3>Отображение содержимого блоков в разных браузерах</h3>
+
+Если задать размеры блоку а в него поместить содержимое превышающее его размеры, то в разных браузерах отображение будет разным:
+<br>
+<img src="Content_in_diff_browsers.gif" alt="">
+<br>
+    Лучше всего - контролировать размеры изображений, но если не получается, то есть свойсво - <b>overflow</b>, на практике используют редко, но иногда полезно:
+<br>
+<b>overflow:</b>
+<ul>
+    <li>visible - если содержимое превышает размеры блока, оно все-равно останется на экране. Результат будет такой же, как на рисунке выше.</li>
+    <li>hidden - браузер отрежет содержимое, которое превышает размер блока.
+    <br>
+    <img src="overflowhidden.gif" alt="">
+    </li>
+    <li>scroll - блок будет снабжен полосами прокрутки, причем как горизонтальной, так и вертикальной.</li>
+    <div id="scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit hic voluptatem aliquid eos in qui repellat consequuntur est quidem, dolores obcaecati eaque enim delectus, modi cumque ipsum tempore perferendis.</div>
+    <br>
+    <li>auto - блок будет снабжен только теми полосами прокрутки, которые необходимы</li>
+    <div id="auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eveniet illo consequatur tenetur a qui illum reiciendis eius, delectus similique, ratione repellat cumque minima commodi doloremque laboriosam facilis et distinctio!</div>
+</ul>
+
+
+</body>
+</html>

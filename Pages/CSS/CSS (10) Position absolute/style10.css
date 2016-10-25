@@ -1,0 +1,38 @@
+#header {
+    background-color: darkred;
+    width: 900px;
+    height: 100px;
+}
+
+#menu {
+    background-color: oldlace;
+    width: 190px;
+    height: 400px;
+}
+
+#content {
+    background-color: oldlace;
+    width: 710px;
+    height: 400px;
+    position: absolute;
+    left: 190px;
+    top: 100px;
+    
+}
+#footer {
+    background-color: darkred;
+    width: 900px;
+    height: 30px;
+}
+body{
+    margin: 0px;
+}
+
+#news {
+    background-color: oldlace;
+    width: 200px;
+    height: 380px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
