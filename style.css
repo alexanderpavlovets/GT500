@@ -101,7 +101,19 @@ body{
 }
 
 #learning_block{
-    height: 340px;
+    height: 350px;
+}
+
+#useful_block{
+    height: 350px;
+}
+
+#why_gt500_block{
+    height: 350px;
+}
+
+#contacts_block{
+    height: 350px;
 }
 
 .content_element{
