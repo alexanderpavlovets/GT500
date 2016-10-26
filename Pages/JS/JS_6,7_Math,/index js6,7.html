@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessons 6</title>
+    <link rel="stylesheet" href="style_js6,7.css" type="text/css">
+    <script type="text/javascript" src="script6,7.js"></script>
+</head>
+<body>
+
+<h1>Урок 6 Объект math в js</h1>
+
+<p>В JS определены некоторые стандартные обьекты и функции. Рассмотрим объект math и его методы</p>
+
+<p>Объект math работает с математическими функциями, а его методы можно использовать для вызова этих функций. 
+<br>
+Некоторые методы объекта math:</p>
+
+<table width="400" border="1" cellspacing="0" cellpadding="5">
+    <tbody align="center">
+        <tr><th>метод</th><th>описание</th></tr>
+        <tr><td>abs</td><td>абсолютное значение
+        <tr><td>sin, cos, tan</td><td>тригонометрическе функции</td></tr>
+        <tr><td>log</td><td>натуральный логарифм</td></tr>
+        <tr><td>exp</td><td>экспонента</td></tr>
+        <tr><td>pow</td><td>показательная функция</td></tr>
+        <tr><td>sqrt</td><td>квадратный корень</td></tr>
+        <tr><td>min</td><td>наименьшее значение</td></tr>
+        <tr><td>max</td><td>наибольшее значение</td></tr>
+    </tbody>
+</table>
+
+<p>Пример: создание формы, которая будет считать площадь треугольника по длинне его сторон. Понадобится формула Герона:</p>
+<img src="Formula_Gerona.gif" alt="Geron's formula">
+
+<p>Пишу саму форму для начала:</p>
+
+<form action="" name="form1">
+    Сторона 1 <input type="text" size="8" maxlength="8" name="st1">
+    Сторона 2 <input type="text" size="8" maxlength="8" name="st2">
+    Сторона 3 <input type="text" size="8" maxlength="8" name="st3">
+    <br><br>
+    <input type="button" value="Вычислить" onClick="areaOfTriangle(form1);">
+    <input type="reset" value="Очистить">
+    <br><br>
+    Результат <input type="text" readonly name="res" size="8" maxlength="8">
+</form>
+
+<p>Итого:
+<br>
+1.Пишу форму в html - уже пора бы запомнить как! Главное - не забудь name="..."
+<br>
+2. Пишу функцию в js:</p>
+
+<pre>function areaOfTriangle(obj) {
+    var a=1*obj.st1.value;
+    var b=1*obj.st2.value;
+    var c=1*obj.st3.value;
+    var p=(a+b+c)/2;
+    var s=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+    obj.res.value=s;
+}</pre>
+
+<P>1* в переменных - для того, что бы перевести значения из полей формы в Number, поскольку изначально они - string. Если бы я их умножал - перевелись бы сами, а поскольку "+" это воспринялось бы как <b>конкатенация строк</b>.</P>
+<p>Обязательно взять в скобки выражение после Math.sqrt(....вот в эти скобки!)</p>
+
+<p>3. Есть ещё ньюанс - число результата вычисляется с дробной часть, которая может быть бесконечно длинной, надо указать только 2 знака после запятой, это делает метод toFixed обьекта Number:
+<br>
+(x).toFixed(N)
+<br>
+Где х - число, которое нужно округлить, а N - число знаков после запятой.
+<br>
+Немного подправляю функцию (добавляю округление):
+</p>
+<pre>
+    function areaOfTriangle(obj) {
+    var a=1*obj.st1.value;
+    var b=1*obj.st2.value;
+    var c=1*obj.st3.value;
+    var p=(a+b+c)/2;
+    var s=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+    s=s.toFixed(2);
+    obj.res.value=s;
+}
+</pre>
+
+<hr>
+
+<h1>Урок 7 Ветвление - оператор if </h1>
+
+<p>Синтакси: 
+<br>
+if B {S1}
+<br>
+else {S2}
+</p>
+
+<p>Где: В - выражение логического типа, а S1 и S2 - операторы
+<br>
+Работает это следующим образом: вычисляется значение  выражения В, если оно истинно, то выполняется оператор S1, если ложно - выполняется S2. Строку else {S2} можно опустить.</p>
+
+<p>Пример: форма, в которую пользователь вводит три значения, и при нажатии кнопки "макс. значение" исчеться максимальное:</p>
+
+<form name="form2">
+    Значение 1 <input type="text" name="zn1" size="8" maxlength="8">
+    <br>
+    Значение 2 <input type="text" name="zn2" size="8" maxlength="8">
+    <br>
+    Значение 3 <input type="text" name="zn3" size="8" maxlength="8">
+    <br>
+    <input type="button" value="Вычислить максимальное" onClick="maxZnach(form2);">
+    <input type="text" name="res" readonly size="8" maxlength="8" >
+    <br>
+    <input type="reset" value="Очистить">
+</form>
+
+<p>Итого: 
+<br>
+1) Пишу форму, как обычно - помни про имена, и в самой форме указать вызов функции с параметром (имя формы)
+<br>
+2) Пишу функцию с ветвлением, опуская else: 
+</p>
+<pre>
+    function    maxZnach(obj) {
+    var a=1*obj.zn1.value;
+    var b=1*obj.zn2.value;
+    var c=1*obj.zn3.value;
+    var m=a;
+    if (b>m) m=b;
+    if (c>m) m=c;
+    obj.res.value=m;
+}
+</pre>
+
+<p>m - максимальное значение, сначала это а, потом сравниваю с b если b больше - m становится b (или остаётся а если b меньше). Потом аналогично сравниваю с с. Потом вывожу m  в поле res. 
+<br>
+Можно аналогичную функцию записть с помощью метода max обьекта Math:</p>
+<pre>
+    function maxZnach_alt (obj) {
+    var a=1*obj.zn1.value;
+    var b=1*obj.zn2.value;
+    var c=1*obj.zn3.value; 
+    obj.res.value=Math.max(Math.max(a,b),c);
+}
+</pre>
+
+    <p><b>Плавное увеличение картинки:</b></p>
+
+<p>По клику на картинку - должна увеличится</p>
+<br>
+<img src="tigrenok.jpg" alt="tigr" width="102" onClick="bigPict();" name="tigr" onMouseOut="smallPict();">
+
+<p>Игото:
+<br>
+1) Картинку на страницу - размер ей, и имя не забыть!
+<br>
+2) Функцию пишу + setTimeout - функция (стандартная) вызывающая пользовательскую функцию с заданным промежутком времени.
+</p>
+<pre>
+   function bigPict() {
+   var w=document.tigr.width;
+    if(w<302){
+        document.tigr.width=w+1;
+        document.tigr.src="tigrenok.jpg";
+        setTimeout("bigPict()", 20);
+    }
+} 
+</pre>
+
+<p>3) Уменьшаю/увеличиваю шаг, для придания плавности.</p>
+
+<p>Вобщем - ничего сложного. Главное - внимательно! Дальше ещё заданье - сделать так, что б при отводе мыши изображение сужалось. Сделал, даже в примере с сайта так-же, но оно криво, поскольку мышь можно отвести когда функция ещё не выполнилась полностью. Надо учится останавливать функции, когда захочу. Пока что хватит.</p>
+
+
+
+</body>
+</html>
