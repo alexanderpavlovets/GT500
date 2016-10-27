@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 9</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script9.js" type="text/javascript"></script>
+</head>
+<body>
+   <h1>Lesson 9 JS Page objects</h1>
+    <p>В языке JavaScript все элементы на web-странице выстраиваются в иерархическую структуру. Каждый элемент представляется в виде объекта. И каждый такой объект может иметь определенные свойства и методы.</p>
+    <p>Что бы детальнее разобратся сделаю страничку знакомств - вроде как :)</p>
+    <center>
+    <img src="lets_meet.gif" alt=""> 
+    <br>
+    я бы запихнул всё в DIVы - но наверное пока не стоит. Буду всё по старинке делать. 
+    <br>
+    Перед началом - ознакомтесь с <a href="#">правилами</a>
+    <form action="" name="form1">
+        <table border="0" cellspasing="5" cellpadding="5" >
+           <caption>форма регистрации</caption>
+           <tr >
+               <td align="right" valign="top">Имя</td>
+               <td><input type="text" size="25" name="name"></td>
+           </tr>
+           <tr >
+               <td align="right" valign="top">Email</td>
+               <td><input type="text" size="25" name="email"></td>
+           </tr>
+           <tr >
+               <td align="right" valign="top">Пароль</td>
+               <td><input type="text" size="25" name="password"></td>
+           </tr>
+           <tr >
+               <td align="right" valign="top">Повтор пароля</td>
+               <td><input type="text" size="25" name="password1"></td>
+           </tr>
+           <tr>
+               <td align="right" valign="top">Пол</td>
+               <td>
+                   <input type="radio" name="sex" value="man" checked> Мужской
+                   <input type="radio" name="sex" value="woman" > Женский
+               </td>
+           </tr>
+           <tr>
+               <td align="right" valign="top">Увлечения</td>
+               <td>
+                   <select name="hobby" id="" size="7" multiple>
+                       <option value="1" selected>компьютеры</option>
+                       <option value="2">спорт</option>
+                       <option value="3">игры</option>
+                       <option value="4">животные</option>
+                       <option value="5">автомобили</option>
+                       <option value="6">клубы</option>
+                       <option value="7">музыка</option>
+                   </select>
+               </td>
+           </tr>
+            <tr>
+                <td align="right" valign="top">Ваши пожелания</td>
+                <td>
+                    <textarea name="" id="" cols="30" rows="3" wrap="hard"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2">
+                    <input type="submit" name="submit" value="Проверить пароли" onClick="check_passwords();">
+                    <input type="submit" name="submit1" value="Мужчина и животные" onClick="man_and_animal();">
+                    <input type="reset" name="reset" value="Очистить">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <img src="just_a_man.gif" alt="">
+    </center>
+    <p>Тут даже всё завернуть в тег center ))) - что бы не нарушать иерархию. В итогк структура:</p>
+    
+    <img src="structure.gif" alt="">
+    
+    <p>Каждый объект этой структуры имеет свое имя и индекс. Индекс определяется положением объекта на странице (сверху вниз). Поэтому картинка, которая расположена выше на странице имеет меньший номер. Нумерация начинается с 0. Объект forms имеет свойство-массив - elements , в котором содержатся ссылки на элементы формы в порядке их перечисления в теге form . Их нумерация также начинается с 0. У объектов формы могут быть свои подчиненные объекты. В нашем примере у объекта elements[6] , который является списком, это пункты списка, которые имеют свою внутреннюю нумерацию.</p>
+    
+    <p>Что бы получить доступ к обьекту - указывается путь к нему "сверху вниз"</p>
+    Например: 
+    <br>
+    Путь к первой картинке: document.images[0]
+    <br>
+    Путь к форме: document.forms[0]
+    <br>
+    Пусть к списку: document.forms[0].elements[6] 
+    <br> 
+    Путь к третьему пункту списка: document.forms[0].elements[6][2]
+    <br>
+    <h2>Такой подход не всегда удобен, поэтому применяют имена и обращаются к обьекту по имени.</h2>
+    <br>
+    Форма имеет имя form1 а первое текстовое поле - name : document.form1.name
+    <br>
+    Что бы узнать данные из этого поля используется value: document.form1.name.value
+    <br>
+    Ввожу функцию для проверки совпадения введеных паролей: 
+    <pre>
+        
+    function prov(){
+     var a=document.forma1.elements[2].value;
+     var b=document.forma1.elements[3].value;
+     if (a==b){
+      alert ("Вы зарегистрированы!");
+     }
+     else
+     {
+      alert ("Введите правильный пароль.");
+     }
+    }
+ 
+    </pre>
+    <p>Дальше пытаюсь проверить любит ли мужчина животных - снова функция</p>
+    <pre>
+        function man_and_animal(){
+            if(document.form1.elements[4].checked && document.form1.elements[6][3].selected){
+                alert ("Мужчтна любит животных!");
+                }
+            else{
+                alert ("Непонятно связь мужика и животного");
+                }
+        }
+    </pre>
+    <p>Вышло! Ха! </p>
+    <p>Обрати внимание - в этой функции: .checked - для радио кнопок, .selected - для выбранных элементов списка </p>
+    
+    <h2>В общем - тут показан только смысл, и он предельно понятен. Обьектов в JS очень много - что бы использовать их свойства и методы - нужно пользоватся справочником. Обьектов - ну просто тьма )</h2>
+</body>
+</html>

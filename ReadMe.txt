@@ -2,5 +2,5 @@
 
 2) + Not working "/" for styles path - need to replace all of the on "../"
 
-3) - Continue with JS - lesson 8 
+3) - Continue with JS - lesson 10 
 
