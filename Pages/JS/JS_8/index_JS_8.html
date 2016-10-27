@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 8</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script8.js"></script>
+</head>
+<body>
+    <h1>Lesson 8 Switch operator</h1>
+     <p>
+     Условие задачи: <br>
+     Мы знаем прогноз погоды на неделю вперед, но пользователю будем выводить только один день - тот, который пользователь себе выберет. <br>
+     Решение - первый раз буду использовать IF <br>
+     Создаю форму сс списком дней недели, кнопкой "ок" и полем для вывода результатов это теги: <br>
+     </p>
+     <pre> form , select, input type="button", textarea </pre>
+     
+     <form action="" name="form1">
+         <select name="day" id="" size="7">
+             <option selected value="mon">понедельник</option>
+             <option value="tue">вторник</option>
+             <option value="wen">среда</option>
+             <option value="thu">четверг</option>
+             <option value="fri">пятница</option>
+             <option value="sut">суббота</option>
+             <option value="sun">воскресенье</option>
+         </select>
+         <input type="button" value="Посмотреть прогноз" onClick="weather_predict(form1);">
+         <br>
+         <textarea name="res" id="" cols="60" rows="10" wrap="soft"></textarea>
+     </form>
+     <p>После чего пишу функцию в JS файле, которая выведет прогноз погоды в зависимости от выбранного дня, после нажатия кнопки. Соответственно - функция вызывается onClick на кнопке</p>
+     <pre> function Vday(obj){
+  if (obj.elements[0][0].selected)
+   obj.res.value="В понедельник будет ветрено, температура воздуха поднимется до +20 градусов";
+  if (obj.elements[0][1].selected)
+   obj.res.value="Во вторник будет солнечно, температура воздуха поднимется до +25 градусов";
+  if (obj.elements[0][2].selected)
+   obj.res.value="В среду будет прохладно, температура воздуха опустится до +17 градусов";
+  if (obj.elements[0][3].selected)
+   obj.res.value="В четверг будет пасмурно, температура воздуха опустится до +10 градусов";
+  if (obj.elements[0][4].selected)
+   obj.res.value="В пятницу будет облачно, температура воздуха поднимется до +15 градусов";
+  if (obj.elements[0][5].selected)
+   obj.res.value="В субботу будет ветрено, температура воздуха поднимется до +27 градусов";
+  if (obj.elements[0][6].selected)
+   obj.res.value="В воскресенье будет ясно, температура воздуха поднимется до +30 градусов";
+    }</pre>
+    <p>Надо помнить про метод выбора [0][0], эта запись означает, что выбран первый елемент первого елемента - смешною <br>
+    Вобщем - форма имеет 3 елемента: список, кнопку, текстовое поле. Запись [0][0] означает что выбираем первый елемент формы(список) + первый елемент из этого елемента(понедельник). ".selected" отмечает что елемент выбран.</p>
+    <p>Тут ничего сложного - смотри в код если что. Дальше задача немного усложнена</p>
+    <h2>Задача усложнённая</h2>
+    <p>Пользователь должен не выбирать день недели а вводить его в текстовое поле</p>
+    
+</body>
+</html>
