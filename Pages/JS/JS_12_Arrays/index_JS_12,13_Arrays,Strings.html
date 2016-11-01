@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS 12</title>
+    <title>JS 12, 13</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script12.js" type="text/javascript"></script>
+    <script src="script12,13.js" type="text/javascript"></script>
 </head>
 <body>
     <h1>Lesson 12 Arrays</h1>
@@ -58,7 +58,59 @@
     
     <a href="Today.html">Ссылка на страницу, которая покажет день недели.</a> <p>Тут просто document.write перезаписывает всю страницу - поэтому она отдельно.</p>
     
-    <p>ПРОДОЛЖАЙ ТУТ</p>
+    <p>В уроке были обьяснения что да как - но тут всё ясно, смотри код и поймёшь. Функция не тяжелая. </p>
+    
+    <p>Массивы можно обьединять с помощью <b>concat()</b>. Допустим есть 2 массива а и б и их нужно обьеденить в с</p>
+    
+    <pre>
+        var a=new Array(1,2,3);
+        var b=new Array(4,5,6);
+        var c=a.concat(b);
+    </pre>
+    <p>В итоге получится массив из шести элементов: 1,2,3,4,5,6 </p>
+    
+    <p>массивы можно сортировать с помощью метода <b>sort()</b>. Но массивы сортируются как строки ! И только как строки, так что тут надо быть осторожным. </p>
+    <pre>
+        var users = new Array("Artem", "Irina", "Sergey", "Boris");
+        var c=users.sort();
+    </pre>
+    <p>На выходе получаем: массив c: Artem, Boris, Irina, Sergey.</p>
+    
+    <p>Если метод <b>sort()</b> применить к массиву с числами :</p>
+    <pre>
+        var n = new Array(11, 12, 10, 107, 3, 20, 25, 101, 14, 34, 44, 5, 4);
+        var c=n.sort();
+    </pre>
+    <p>То получится следующий массив: 10, 101, 107, 11, 12, 14, 20, 25, 3, 34, 4, 44, 5. Т.е. элементы сравниваются как строки, а не как числа. </p>
+    
+    <p>Поиск по массиву</p>
+    <p>Есть массив с именами - надо узнать есть ли имя в этом массиве:</p>
+    
+    <p>Пишу форму с вызовом функции:</p>
+    <pre>
+        function proverka(obj) {
+                var k;
+                var users = new Array("Artem", "Irina", "Sergey", "Boris", "Olga", "Viktor");
+                var n=obj.name.value;
+                for (var i=0; i&ang;=users.length-1; i++){
+                    if (users[i]==n)
+                    {k=0; break}
+                }
+                if (k==0){alert("Это имя присутствует в массиве.")}
+                else {alert("Такого имени в массиве нет.")}
+            }
+    </pre>
+    
+    <p>Сама форма:</p>
+    <form action="" name="form1">
+       Введите имя для проверки:
+        <input type="text" size="20" name="name">
+        <input type="button" value="Проверить" onClick="check_name(form1);">
+    </form>
+    <p>Здесь используется алгоритм - <b>линейный поиск</b>, каждое значение массива сравнивается с образцом, если значение совпало - поиск прерывается, если нет - результат поиска только после сравнения всего массива. </p>
+    
+    <hr>
+    <h1>Lesson 13 Strings</h1>
 
 </body>
 </html>
